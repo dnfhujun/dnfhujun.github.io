@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="http://dnfhujun.github.io/" rel="alternate"></link><link href="http://dnfhujun.github.io/feeds/java.atom.xml" rel="self"></link><id>http://dnfhujun.github.io/</id><updated>2014-10-09T11:20:00+08:00</updated><entry><title>Hello World</title><link href="http://dnfhujun.github.io/hello-world.html" rel="alternate"></link><updated>2014-10-09T11:20:00+08:00</updated><author><name>hujun</name></author><id>tag:dnfhujun.github.io,2014-10-09:hello-world.html</id><summary type="html">&lt;p&gt;public static void main(String[] args){
+    System.out.println("hello world!");
+}&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry></feed>

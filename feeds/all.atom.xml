@@ -70,4 +70,6 @@ This is the content of my super blog post.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;就可以看到效果了。&lt;/p&gt;</summary><category term="pelican"></category><category term="Python"></category></entry><entry><title>Hello World</title><link href="http://dnfhujun.github.io/hello-world.html" rel="alternate"></link><updated>2014-10-09T11:20:00+08:00</updated><author><name>hujun</name></author><id>tag:dnfhujun.github.io,2014-10-09:hello-world.html</id><summary type="html">&lt;p&gt;public static void main(String[] args){
     System.out.println("hello world!");
-}&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry><entry><title>My First Review</title><link href="http://dnfhujun.github.io/my-first-review.html" rel="alternate"></link><updated>2010-12-03T10:20:00+08:00</updated><author><name>hujun</name></author><id>tag:dnfhujun.github.io,2010-12-03:my-first-review.html</id><summary type="html">&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;/p&gt;</summary></entry></feed>
+}&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry><entry><title>My First Art</title><link href="http://dnfhujun.github.io/my-first-art.html" rel="alternate"></link><updated>2013-12-03T10:20:00+08:00</updated><author><name>hujun</name></author><id>tag:dnfhujun.github.io,2013-12-03:my-first-art.html</id><summary type="html">&lt;p&gt;My First Art.
+    :::codehilite(css_class=highlight)
+    System.out.println("Hello world!");&lt;/p&gt;</summary></entry></feed>

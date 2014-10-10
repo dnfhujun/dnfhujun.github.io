@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="http://dnfhujun.github.io/" rel="alternate"></link><link href="http://dnfhujun.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dnfhujun.github.io/</id><updated>2014-10-10T00:00:00+08:00</updated><entry><title>Windows下使用GITHUB+Pelican搭建个人Blog安装与配置</title><link href="http://dnfhujun.github.io/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html" rel="alternate"></link><updated>2014-10-10T00:00:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-10-10:windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html</id><summary type="html">&lt;h2&gt;准备工作&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="http://dnfhujun.github.io/" rel="alternate"></link><link href="http://dnfhujun.github.io/feeds/hjboy.atom.xml" rel="self"></link><id>http://dnfhujun.github.io/</id><updated>2014-10-10T00:00:00+08:00</updated><entry><title>Windows下使用GITHUB+Pelican搭建个人Blog安装与配置</title><link href="http://dnfhujun.github.io/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html" rel="alternate"></link><updated>2014-10-10T00:00:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-10-10:windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html</id><summary type="html">&lt;h2&gt;准备工作&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;1. 安装Python&lt;/strong&gt;&lt;br /&gt;
 到python官网下载Python，最好选择2.7的版本，点击安装，路径如下：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -68,6 +68,4 @@ This is the content of my super blog post.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;http://127.0.0.1:8000  &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;就可以看到效果了。&lt;/p&gt;</summary><category term="pelican"></category><category term="Python"></category></entry><entry><title>Hello World</title><link href="http://dnfhujun.github.io/hello-world.html" rel="alternate"></link><updated>2014-10-09T11:20:00+08:00</updated><author><name>hujun</name></author><id>tag:dnfhujun.github.io,2014-10-09:hello-world.html</id><summary type="html">&lt;p&gt;public static void main(String[] args){
-    System.out.println("hello world!");
-}&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry><entry><title>My First Review</title><link href="http://dnfhujun.github.io/my-first-review.html" rel="alternate"></link><updated>2010-12-03T10:20:00+08:00</updated><author><name>hujun</name></author><id>tag:dnfhujun.github.io,2010-12-03:my-first-review.html</id><summary type="html">&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;就可以看到效果了。&lt;/p&gt;</summary><category term="pelican"></category><category term="Python"></category></entry></feed>

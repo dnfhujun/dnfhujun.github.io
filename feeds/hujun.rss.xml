@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hujunblog</title><link>http://dnfhujun.github.io/</link><description></description><atom:link href="http://dnfhujun.github.io/feeds/hujun.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 09 Oct 2014 11:20:00 +0800</lastBuildDate><item><title>Hello World</title><link>http://dnfhujun.github.io/hello-world.html</link><description>&lt;p&gt;public static void main(String[] args){
-    System.out.println("hello world!");
-}&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hujun</dc:creator><pubDate>Thu, 09 Oct 2014 11:20:00 +0800</pubDate><guid>tag:dnfhujun.github.io,2014-10-09:hello-world.html</guid><category>pelican</category><category>publishing</category></item><item><title>My First Art</title><link>http://dnfhujun.github.io/my-first-art.html</link><description>&lt;p&gt;My First Art.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hujunblog</title><link>/</link><description></description><atom:link href="/feeds/hujun.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 09 Oct 2014 11:20:00 +0800</lastBuildDate><item><title>Hello World</title><link>/hello-world.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;){&lt;/span&gt;
+    &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;dfjkdjf  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Pelican&lt;/code&gt; is best!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hujun</dc:creator><pubDate>Thu, 09 Oct 2014 11:20:00 +0800</pubDate><guid>tag:,2014-10-09:hello-world.html</guid><category>pelican</category></item><item><title>My First Art</title><link>/my-first-art.html</link><description>&lt;p&gt;My First Art.
     :::codehilite(css_class=highlight)
-    System.out.println("Hello world!");&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hujun</dc:creator><pubDate>Tue, 03 Dec 2013 10:20:00 +0800</pubDate><guid>tag:dnfhujun.github.io,2013-12-03:my-first-art.html</guid></item></channel></rss>
+    System.out.println("Hello world!");&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hujun</dc:creator><pubDate>Tue, 03 Dec 2013 10:20:00 +0800</pubDate><guid>tag:,2013-12-03:my-first-art.html</guid></item></channel></rss>

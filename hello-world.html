@@ -10,23 +10,30 @@
 
 
 
-<link rel="canonical" href="http://dnfhujun.github.io/hello-world.html">
+<link rel="canonical" href="/hello-world.html">
 
         <meta name="author" content="hujun" />
-        <meta name="keywords" content="pelican,publishing" />
-        <meta name="description" content="public static void main(String[] args){ System.out.println(&#34;hello world!&#34;); }" />
+        <meta name="keywords" content="pelican" />
+        <meta name="description" content="public static void main(String[] args){ System.out.println(&#34;hello world!&#34;); } dfjkdjf Pelican is best!" />
+
+    <!-- Enable latex plugin -->
+
 
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://dnfhujun.github.io/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="http://dnfhujun.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="http://dnfhujun.github.io/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://dnfhujun.github.io/theme/css/style.css" type="text/css"/>
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
 
-        <link href="http://dnfhujun.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="hujunblog ATOM Feed"/>
+
+
+        <link href="/feeds/java.atom.xml" type="application/atom+xml" rel="alternate"
+              title="hujunblog java ATOM Feed"/>
 
 </head>
 <body>
@@ -40,26 +47,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://dnfhujun.github.io/" class="navbar-brand">
+            <a href="/" class="navbar-brand">
 hujunblog            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="http://dnfhujun.github.io/pages/about-me.html">
+                         <li><a href="/pages/about-me.html">
                              About me
                           </a></li>
                         <li class="active">
-                            <a href="http://dnfhujun.github.io/category/java.html">Java</a>
+                            <a href="/category/java.html">Java</a>
                         </li>
                         <li >
-                            <a href="http://dnfhujun.github.io/category/other.html">Other</a>
+                            <a href="/category/other.html">Other</a>
                         </li>
                         <li >
-                            <a href="http://dnfhujun.github.io/category/python.html">Python</a>
+                            <a href="/category/python.html">Python</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://dnfhujun.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -74,7 +81,7 @@ hujunblog            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://dnfhujun.github.io/hello-world.html"
+                    <a href="/hello-world.html"
                        rel="bookmark"
                        title="Permalink to Hello World">
                         Hello World
@@ -93,15 +100,18 @@ hujunblog            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://dnfhujun.github.io/tag/pelican.html">pelican</a>
-        /
-	<a href="http://dnfhujun.github.io/tag/publishing.html">publishing</a>
+	<a href="/tag/pelican.html">pelican</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>public static void main(String[] args){
-    System.out.println("hello world!");
-}</p>
+                <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;hello world!&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<p>dfjkdjf  </p>
+<p><code>Pelican</code> is best!</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -114,7 +124,7 @@ hujunblog            </a>
             var disqus_shortname = 'hujunblog'; // required: replace example with your forum shortname
 
                     var disqus_identifier = 'hello-world';
-                var disqus_url = 'http://dnfhujun.github.io/hello-world.html';
+                var disqus_url = '/hello-world.html';
 
             var disqus_config = function () {
                 this.language = "zh";
@@ -138,38 +148,33 @@ hujunblog            </a>
     </section>
 
         </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
+        <div class="col-sm-3 well well-sm" id="sidebar">
 
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="http://weibo.com/dnfhujun/home"><i class="fa fa-微博-square fa-lg"></i> 微博</a></li>
-              </ul>
-            </li>
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="http://weibo.com/dnfhujun/home"><i class="fa fa-微博-square fa-lg"></i> 微博</a></li>
+                  </ul>
+                </li>
 
 
 
-            <li class="list-group-item"><a href="http://dnfhujun.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-1">
-                        <a href="http://dnfhujun.github.io/tag/pelican.html">
-                            pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://dnfhujun.github.io/tag/publishing.html">
-                            publishing
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://dnfhujun.github.io/tag/python.html">
-                            Python
-                        </a>
-                    </li>
-                </ul>
-            </li>
+                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group " id="tags">
+                        <li class="list-group-item tag-1">
+                            <a href="/tag/pelican.html">
+                                pelican
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/python.html">
+                                Python
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
       <ul class="list-group" id="links">
         <li class="list-group-item">
@@ -194,10 +199,11 @@ hujunblog            </a>
         </li>
       </ul>
     </li>
-    </ul>
-</section>
-            </aside>
-        </div>
+
+        </ul>
+    </section>
+
+</aside>        </div>
     </div>
 </div>
 <footer>
@@ -212,13 +218,13 @@ hujunblog            </a>
       </div>
    </div>
 </footer>
-<script src="http://dnfhujun.github.io/theme/js/jquery.min.js"></script>
+<script src="/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://dnfhujun.github.io/theme/js/bootstrap.min.js"></script>
+<script src="/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://dnfhujun.github.io/theme/js/respond.min.js"></script>
+<script src="/theme/js/respond.min.js"></script>
 
     <!-- Disqus -->
     <script type="text/javascript">

@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-10-10T00:00:00+08:00</updated><entry><title>Windows下使用GITHUB+Pelican搭建个人Blog安装与配置</title><link href="/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html" rel="alternate"></link><updated>2014-10-10T00:00:00+08:00</updated><author><name>hjboy</name></author><id>tag:,2014-10-10:windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html</id><summary type="html">&lt;h2&gt;准备工作&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="http://dnfhujun.github.io/" rel="alternate"></link><link href="http://dnfhujun.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dnfhujun.github.io/</id><updated>2014-10-15T11:20:00+08:00</updated><entry><title>JS 重新加载iframe</title><link href="http://dnfhujun.github.io/js-zhong-xin-jia-zai-iframe.html" rel="alternate"></link><updated>2014-10-15T11:20:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-10-15:js-zhong-xin-jia-zai-iframe.html</id><summary type="html">&lt;p&gt;这两天在做一个需求的时候，需要在提交一个表单的时候，将iframe重新加载下，在google上搜索了许多案例，主要有两种：&lt;br /&gt;
+1. 通过&lt;code&gt;window.document.iframes['framename'].location.url= XXX&lt;/code&gt; &lt;br /&gt;
+2. 通过Jquery来实现：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#iframe&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#iframe&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但是我的这种比较特殊，我的页面的结构特殊，这种情况并不适用，如下：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;......
+&lt;span class="nt"&gt;&amp;lt;form&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;form-1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;action=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/achievement/query.do&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;method=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;get&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;target=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;iframe-1&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    ......
+&lt;span class="nt"&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+......
+&lt;span class="nt"&gt;&amp;lt;iframe&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;iframe-1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;width:85%&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;iframe-1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/blank/blank.html&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;frameborder=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;scrolling=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;no&amp;quot;&lt;/span&gt;
+     &lt;span class="na"&gt;onload=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;common.resizeIframe(this);parent.common.resizeIframe(parent.$(&amp;#39;#tabs-1 iframe&amp;#39;).get(0));&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;是通过一个form表单把数据定向到iframe，如果适用上面两种方式实现的话，这里的&lt;code&gt;${#iframe-1}.attr('src')='/blank/blank.html'&lt;/code&gt;,并不能达到实际的效果，因此适用了另外一种方式实现了iframe的重新加载。&lt;br /&gt;
+使用&lt;code&gt;window.iframes['framename'].location.reload(true)&lt;/code&gt;可以达到这个效果。因为我的这个页面涉及到父子窗口，正确的使用方式如下：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;parent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;frames&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;iframe-1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;reload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ps:在window.document对象下也有iframes方法，但是貌似有兼容性问题，IE下可以生效，在chrome 不能生效。&lt;/p&gt;</summary><category term="java"></category></entry><entry><title>Windows下使用GITHUB+Pelican搭建个人Blog安装与配置</title><link href="http://dnfhujun.github.io/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html" rel="alternate"></link><updated>2014-10-10T00:00:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-10-10:windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html</id><summary type="html">&lt;h2&gt;准备工作&lt;/h2&gt;
 &lt;h3&gt;1. 安装Python&lt;/h3&gt;
 &lt;p&gt;到python官网下载Python，最好选择2.7的版本，点击安装，路径如下：  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;C:&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Python27&lt;/span&gt;
@@ -90,13 +115,4 @@
 
 
 &lt;p&gt;执行完后，在浏览器中输入&lt;code&gt;http://username.github.io&lt;/code&gt;就可以看到效果了。&lt;br /&gt;
-&lt;img alt="img" src="/img/3.png" /&gt;&lt;/p&gt;</summary><category term="pelican"></category><category term="Python"></category></entry><entry><title>Hello World</title><link href="/hello-world.html" rel="alternate"></link><updated>2014-10-09T11:20:00+08:00</updated><author><name>hujun</name></author><id>tag:,2014-10-09:hello-world.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;){&lt;/span&gt;
-    &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;dfjkdjf  &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Pelican&lt;/code&gt; is best!&lt;/p&gt;</summary><category term="pelican"></category></entry><entry><title>My First Art</title><link href="/my-first-art.html" rel="alternate"></link><updated>2013-12-03T10:20:00+08:00</updated><author><name>hujun</name></author><id>tag:,2013-12-03:my-first-art.html</id><summary type="html">&lt;p&gt;My First Art.
-    :::codehilite(css_class=highlight)
-    System.out.println("Hello world!");&lt;/p&gt;</summary></entry></feed>
+&lt;img alt="img" src="/img/3.png" /&gt;&lt;/p&gt;</summary><category term="pelican"></category><category term="Python"></category></entry></feed>

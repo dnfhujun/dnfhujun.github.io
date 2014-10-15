@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>Python - hujunblog</title>
+    <title>java - hujunblog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
 
     <meta name="author" content="hujun" />
-    <meta name="keywords" content="Python" />
+    <meta name="keywords" content="java" />
 
     <!-- Enable latex plugin -->
 
@@ -77,9 +77,22 @@ hujunblog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://dnfhujun.github.io/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html">Windows下使用GITHUB+Pelican搭建个人Blog安装与配置</a></h2>
-                <div class="summary"><p>Short introduce to pelican</p>
-                    <a class="btn btn-default btn-xs" href="http://dnfhujun.github.io/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html">more ...</a>
+                <h2><a href="http://dnfhujun.github.io/js-zhong-xin-jia-zai-iframe.html">JS 重新加载iframe</a></h2>
+                <div class="summary"><p>这两天在做一个需求的时候，需要在提交一个表单的时候，将iframe重新加载下，在google上搜索了许多案例，主要有两种：<br />
+1. 通过<code>window.document.iframes['framename'].location.url= XXX</code> <br />
+2. 通过Jquery来实现：  </p>
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#iframe&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#iframe&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">));</span>
+</pre></div>
+
+
+<p>但是我的这种比较特殊，我的页面的结构特殊，这种情况并不适用，如下：  </p>
+<div class="highlight"><pre>......
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;form-1&quot;</span> <span class="na">action=</span><span class="s">&quot;/achievement/query.do&quot;</span> <span class="na">method=</span><span class="s">&quot;get&quot;</span> <span class="na">target=</span><span class="s">&quot;iframe-1&quot;</span> <span class="nt">&gt;</span>
+    ......
+<span class="nt">&lt;/form&gt;</span>
+......
+<span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">&quot;iframe-1&quot;</span> <span class="na">style=</span><span class="s">&quot;width:85%&quot;</span> <span class="na">name=</span><span class="s">&quot;iframe-1&quot;</span> <span class="na">src=</span><span class="s">&quot;/blank/blank.html ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="http://dnfhujun.github.io/js-zhong-xin-jia-zai-iframe.html">more ...</a>
                 </div>
             </article>
             <hr/>

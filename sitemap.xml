@@ -4,106 +4,92 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>/index.html</loc>
-<lastmod>2014-10-11T10:49:39-00:00</lastmod>
+<loc>http://dnfhujun.github.io/index.html</loc>
+<lastmod>2014-10-15T09:36:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/archives.html</loc>
-<lastmod>2014-10-11T10:49:39-00:00</lastmod>
+<loc>http://dnfhujun.github.io/archives.html</loc>
+<lastmod>2014-10-15T09:36:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tags.html</loc>
-<lastmod>2014-10-11T10:49:39-00:00</lastmod>
+<loc>http://dnfhujun.github.io/tags.html</loc>
+<lastmod>2014-10-15T09:36:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/categories.html</loc>
-<lastmod>2014-10-11T10:49:39-00:00</lastmod>
+<loc>http://dnfhujun.github.io/categories.html</loc>
+<lastmod>2014-10-15T09:36:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/about-me.html</loc>
+<loc>http://dnfhujun.github.io/pages/about-me.html</loc>
 <lastmod>2014-10-09T10:20:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
-<loc>/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html</loc>
+<loc>http://dnfhujun.github.io/js-zhong-xin-jia-zai-iframe.html</loc>
+<lastmod>2014-10-15T11:20:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>http://dnfhujun.github.io/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html</loc>
 <lastmod>2014-10-10T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>/hello-world.html</loc>
-<lastmod>2014-10-09T11:20:00-00:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>/my-first-art.html</loc>
-<lastmod>2013-12-03T10:20:00-00:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
-<url>
-<loc>/category/java.html</loc>
-<lastmod>2014-10-09T11:20:00+08:06</lastmod>
+<loc>http://dnfhujun.github.io/category/java.html</loc>
+<lastmod>2014-10-15T11:20:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/other.html</loc>
-<lastmod>2013-12-03T10:20:00+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/category/python.html</loc>
+<loc>http://dnfhujun.github.io/category/python.html</loc>
 <lastmod>2014-10-10T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/python.html</loc>
+<loc>http://dnfhujun.github.io/tag/python.html</loc>
 <lastmod>2014-10-10T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/pelican.html</loc>
+<loc>http://dnfhujun.github.io/tag/pelican.html</loc>
 <lastmod>2014-10-10T00:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/author/hjboy.html</loc>
-<lastmod>2014-10-10T00:00:00+08:06</lastmod>
+<loc>http://dnfhujun.github.io/tag/java.html</loc>
+<lastmod>2014-10-15T11:20:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/author/hujun.html</loc>
-<lastmod>2014-10-09T11:20:00+08:06</lastmod>
+<loc>http://dnfhujun.github.io/author/hjboy.html</loc>
+<lastmod>2014-10-15T11:20:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="http://dnfhujun.github.io/" rel="alternate"></link><link href="http://dnfhujun.github.io/feeds/mysql.atom.xml" rel="self"></link><id>http://dnfhujun.github.io/</id><updated>2014-10-21T00:00:00+08:00</updated><entry><title>ubuntu安装mysql</title><link href="http://dnfhujun.github.io/ubuntuan-zhuang-mysql.html" rel="alternate"></link><updated>2014-10-21T00:00:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-10-21:ubuntuan-zhuang-mysql.html</id><summary type="html">&lt;p&gt;其实在unbuntu下安装mysql非常简单，只需要执行（需要超级用户的权限）：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但是对于ubuntu下，mysql到底安装到哪去了，却找了半天，主要有如下几个目录：  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/etc/mysql&lt;/code&gt;这个目录下存放了mysql的配置文件，默认是&lt;code&gt;my.cnf&lt;/code&gt;。&lt;br /&gt;
+&lt;code&gt;/var/lib/mysql&lt;/code&gt;这个目录存放了mysql的物理存储文件和binlog的日志文件。&lt;br /&gt;
+&lt;code&gt;/var/log/mysql&lt;/code&gt;这个目录存放了mysql的错误日志的文件。&lt;br /&gt;
+&lt;code&gt;/etc/init.d/&lt;/code&gt;这个目录存放了mysql的启动程序，当然也可以通过service的方式启动。&lt;/p&gt;</summary><category term="MySQL，Linux"></category></entry></feed>

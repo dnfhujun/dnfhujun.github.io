@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>pelican - hujunblog</title>
+    <title>MySQL - hujunblog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
 
     <meta name="author" content="hujun" />
-    <meta name="keywords" content="pelican" />
+    <meta name="keywords" content="MySQL" />
 
     <!-- Enable latex plugin -->
 
@@ -36,6 +36,8 @@
               title="hujunblog ATOM Feed"/>
 
 
+        <link href="http://dnfhujun.github.io/feeds/MySQL.atom.xml" type="application/atom+xml" rel="alternate"
+              title="hujunblog MySQL ATOM Feed"/>
 
 </head>
 <body>
@@ -60,7 +62,7 @@ hujunblog            </a>
                         <li >
                             <a href="http://dnfhujun.github.io/category/java.html">Java</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://dnfhujun.github.io/category/mysql.html">Mysql</a>
                         </li>
                         <li >
@@ -80,9 +82,18 @@ hujunblog            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://dnfhujun.github.io/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html">Windows下使用GITHUB+Pelican搭建个人Blog安装与配置</a></h2>
-                <div class="summary"><p>Short introduce to pelican</p>
-                    <a class="btn btn-default btn-xs" href="http://dnfhujun.github.io/windowsxia-shi-yong-githubpelicanda-jian-ge-ren-blogan-zhuang-yu-pei-zhi.html">more ...</a>
+                <h2><a href="http://dnfhujun.github.io/ubuntuan-zhuang-mysql.html">ubuntu安装mysql</a></h2>
+                <div class="summary"><p>其实在unbuntu下安装mysql非常简单，只需要执行（需要超级用户的权限）：  </p>
+<div class="highlight"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span> <span class="n">mysql</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+
+
+<p>但是对于ubuntu下，mysql到底安装到哪去了，却找了半天，主要有如下几个目录：  </p>
+<p><code>/etc/mysql</code>这个目录下存放了mysql的配置文件，默认是<code>my.cnf</code>。<br />
+<code>/var/lib/mysql</code>这个目录存放了mysql的物理存储文件和binlog的日志文件。<br />
+<code>/var/log/mysql</code>这个目录存放了mysql的错误日志的文件。<br />
+<code>/etc/init.d/</code>这个目录存放了mysql的启动程序，当然也可以通过service的方式启动。</p>
+                    <a class="btn btn-default btn-xs" href="http://dnfhujun.github.io/ubuntuan-zhuang-mysql.html">more ...</a>
                 </div>
             </article>
             <hr/>

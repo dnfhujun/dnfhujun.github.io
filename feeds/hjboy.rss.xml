@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hujunblog</title><link>http://dnfhujun.github.io/</link><description></description><atom:link href="http://dnfhujun.github.io/feeds/hjboy.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 15 Oct 2014 11:20:00 +0800</lastBuildDate><item><title>JS 重新加载iframe</title><link>http://dnfhujun.github.io/js-zhong-xin-jia-zai-iframe.html</link><description>&lt;p&gt;这两天在做一个需求的时候，需要在提交一个表单的时候，将iframe重新加载下，在google上搜索了许多案例，主要有两种：&lt;br /&gt;
-1. 通过&lt;code&gt;window.document.iframes['framename'].location.url= XXX&lt;/code&gt; &lt;br /&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hujunblog</title><link>http://dnfhujun.github.io/</link><description></description><atom:link href="http://dnfhujun.github.io/feeds/hjboy.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 21 Oct 2014 00:00:00 +0800</lastBuildDate><item><title>ubuntu安装mysql</title><link>http://dnfhujun.github.io/ubuntuan-zhuang-mysql.html</link><description>&lt;p&gt;其实在unbuntu下安装mysql非常简单，只需要执行（需要超级用户的权限）：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但是对于ubuntu下，mysql到底安装到哪去了，却找了半天，主要有如下几个目录：  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/etc/mysql&lt;/code&gt;这个目录下存放了mysql的配置文件，默认是&lt;code&gt;my.cnf&lt;/code&gt;。&lt;br /&gt;
+&lt;code&gt;/var/lib/mysql&lt;/code&gt;这个目录存放了mysql的物理存储文件和binlog的日志文件。&lt;br /&gt;
+&lt;code&gt;/var/log/mysql&lt;/code&gt;这个目录存放了mysql的错误日志的文件。&lt;br /&gt;
+&lt;code&gt;/etc/init.d/&lt;/code&gt;这个目录存放了mysql的启动程序，当然也可以通过service的方式启动。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hjboy</dc:creator><pubDate>Tue, 21 Oct 2014 00:00:00 +0800</pubDate><guid>tag:dnfhujun.github.io,2014-10-21:ubuntuan-zhuang-mysql.html</guid><category>MySQL，Linux</category></item><item><title>JS 重新加载iframe</title><link>http://dnfhujun.github.io/js-zhong-xin-jia-zai-iframe.html</link><description>&lt;p&gt;这两天在做一个需求的时候，需要在提交一个表单的时候，将iframe重新加载下，在google上搜索了许多案例，主要有两种：&lt;br /&gt;
+1. 通过&lt;code&gt;window.document.frames['framename'].location.url= XXX&lt;/code&gt; &lt;br /&gt;
 2. 通过Jquery来实现：  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#iframe&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#iframe&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -19,7 +28,7 @@
 
 
 &lt;p&gt;是通过一个form表单把数据定向到iframe，如果适用上面两种方式实现的话，这里的&lt;code&gt;${#iframe-1}.attr('src')='/blank/blank.html'&lt;/code&gt;,并不能达到实际的效果，因此适用了另外一种方式实现了iframe的重新加载。&lt;br /&gt;
-使用&lt;code&gt;window.iframes['framename'].location.reload(true)&lt;/code&gt;可以达到这个效果。因为我的这个页面涉及到父子窗口，正确的使用方式如下：  &lt;/p&gt;
+使用&lt;code&gt;window.frames['framename'].location.reload(true)&lt;/code&gt;可以达到这个效果。因为我的这个页面涉及到父子窗口，正确的使用方式如下：  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;parent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;frames&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;iframe-1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;reload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 

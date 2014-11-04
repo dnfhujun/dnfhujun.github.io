@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="http://dnfhujun.github.io/" rel="alternate"></link><link href="http://dnfhujun.github.io/feeds/java.atom.xml" rel="self"></link><id>http://dnfhujun.github.io/</id><updated>2014-10-15T11:20:00+08:00</updated><entry><title>JS 重新加载iframe</title><link href="http://dnfhujun.github.io/js-zhong-xin-jia-zai-iframe.html" rel="alternate"></link><updated>2014-10-15T11:20:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-10-15:js-zhong-xin-jia-zai-iframe.html</id><summary type="html">&lt;p&gt;这两天在做一个需求的时候，需要在提交一个表单的时候，将iframe重新加载下，在google上搜索了许多案例，主要有两种：&lt;br /&gt;
-1. 通过&lt;code&gt;window.document.iframes['framename'].location.url= XXX&lt;/code&gt; &lt;br /&gt;
+1. 通过&lt;code&gt;window.document.frames['framename'].location.url= XXX&lt;/code&gt; &lt;br /&gt;
 2. 通过Jquery来实现：  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#iframe&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;#iframe&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;src&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -19,7 +19,7 @@
 
 
 &lt;p&gt;是通过一个form表单把数据定向到iframe，如果适用上面两种方式实现的话，这里的&lt;code&gt;${#iframe-1}.attr('src')='/blank/blank.html'&lt;/code&gt;,并不能达到实际的效果，因此适用了另外一种方式实现了iframe的重新加载。&lt;br /&gt;
-使用&lt;code&gt;window.iframes['framename'].location.reload(true)&lt;/code&gt;可以达到这个效果。因为我的这个页面涉及到父子窗口，正确的使用方式如下：  &lt;/p&gt;
+使用&lt;code&gt;window.frames['framename'].location.reload(true)&lt;/code&gt;可以达到这个效果。因为我的这个页面涉及到父子窗口，正确的使用方式如下：  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;parent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;frames&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;iframe-1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;reload&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 

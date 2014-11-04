@@ -14,7 +14,7 @@
 
         <meta name="author" content="hjboy" />
         <meta name="keywords" content="java" />
-        <meta name="description" content="这两天在做一个需求的时候，需要在提交一个表单的时候，将iframe重新加载下，在google上搜索了许多案例，主要有两种： 1. 通过window.document.iframes[&#39;framename&#39;].location.url= XXX 2. 通过Jquery来实现： $(&#39;#iframe&#39;).attr(&#39;src&#39;, $(&#39;#iframe&#39;).attr(&#39;src&#39;)); 但是我的这种比较特殊，我的页面的结构特殊，这种情况并不适用，如下： ...... &lt;form id=&#34;form-1&#34; action=&#34;/achievement/query.do&#34; method=&#34;get&#34; target=&#34;iframe-1&#34; &gt; ...... &lt;/form&gt; ...... &lt;iframe id=&#34;iframe-1&#34; style=&#34;width:85%&#34; name=&#34;iframe-1&#34; src=&#34;/blank/blank.html ..." />
+        <meta name="description" content="这两天在做一个需求的时候，需要在提交一个表单的时候，将iframe重新加载下，在google上搜索了许多案例，主要有两种： 1. 通过window.document.frames[&#39;framename&#39;].location.url= XXX 2. 通过Jquery来实现： $(&#39;#iframe&#39;).attr(&#39;src&#39;, $(&#39;#iframe&#39;).attr(&#39;src&#39;)); 但是我的这种比较特殊，我的页面的结构特殊，这种情况并不适用，如下： ...... &lt;form id=&#34;form-1&#34; action=&#34;/achievement/query.do&#34; method=&#34;get&#34; target=&#34;iframe-1&#34; &gt; ...... &lt;/form&gt; ...... &lt;iframe id=&#34;iframe-1&#34; style=&#34;width:85%&#34; name=&#34;iframe-1&#34; src=&#34;/blank/blank.html ..." />
 
     <!-- Enable latex plugin -->
 
@@ -57,6 +57,9 @@ hujunblog            </a>
                           </a></li>
                         <li class="active">
                             <a href="http://dnfhujun.github.io/category/java.html">Java</a>
+                        </li>
+                        <li >
+                            <a href="http://dnfhujun.github.io/category/mysql.html">Mysql</a>
                         </li>
                         <li >
                             <a href="http://dnfhujun.github.io/category/python.html">Python</a>
@@ -102,7 +105,7 @@ hujunblog            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>这两天在做一个需求的时候，需要在提交一个表单的时候，将iframe重新加载下，在google上搜索了许多案例，主要有两种：<br />
-1. 通过<code>window.document.iframes['framename'].location.url= XXX</code> <br />
+1. 通过<code>window.document.frames['framename'].location.url= XXX</code> <br />
 2. 通过Jquery来实现：  </p>
 <div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#iframe&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#iframe&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">));</span>
 </pre></div>
@@ -121,7 +124,7 @@ hujunblog            </a>
 
 
 <p>是通过一个form表单把数据定向到iframe，如果适用上面两种方式实现的话，这里的<code>${#iframe-1}.attr('src')='/blank/blank.html'</code>,并不能达到实际的效果，因此适用了另外一种方式实现了iframe的重新加载。<br />
-使用<code>window.iframes['framename'].location.reload(true)</code>可以达到这个效果。因为我的这个页面涉及到父子窗口，正确的使用方式如下：  </p>
+使用<code>window.frames['framename'].location.reload(true)</code>可以达到这个效果。因为我的这个页面涉及到父子窗口，正确的使用方式如下：  </p>
 <div class="highlight"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">frames</span><span class="p">[</span><span class="s1">&#39;iframe-1&#39;</span><span class="p">].</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 </pre></div>
 
@@ -179,18 +182,23 @@ hujunblog            </a>
                 <li class="list-group-item"><a href="http://dnfhujun.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group " id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="http://dnfhujun.github.io/tag/python.html">
-                                Python
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
                             <a href="http://dnfhujun.github.io/tag/pelican.html">
                                 pelican
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
+                            <a href="http://dnfhujun.github.io/tag/python.html">
+                                Python
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
                             <a href="http://dnfhujun.github.io/tag/java.html">
                                 java
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://dnfhujun.github.io/tag/mysqllinux.html">
+                                MySQL，Linux
                             </a>
                         </li>
                     </ul>

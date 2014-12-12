@@ -1,5 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="http://dnfhujun.github.io/" rel="alternate"></link><link href="http://dnfhujun.github.io/feeds/mysql.atom.xml" rel="self"></link><id>http://dnfhujun.github.io/</id><updated>2014-10-21T00:00:00+08:00</updated><entry><title>ubuntu安装mysql</title><link href="http://dnfhujun.github.io/ubuntuan-zhuang-mysql.html" rel="alternate"></link><updated>2014-10-21T00:00:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-10-21:ubuntuan-zhuang-mysql.html</id><summary type="html">&lt;p&gt;其实在unbuntu下安装mysql非常简单，只需要执行（需要超级用户的权限）：  &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>hujunblog</title><link href="http://dnfhujun.github.io/" rel="alternate"></link><link href="http://dnfhujun.github.io/feeds/mysql.atom.xml" rel="self"></link><id>http://dnfhujun.github.io/</id><updated>2014-12-10T00:00:00+08:00</updated><entry><title>mysql实用事项</title><link href="http://dnfhujun.github.io/mysqlshi-yong-shi-xiang.html" rel="alternate"></link><updated>2014-12-10T00:00:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-12-10:mysqlshi-yong-shi-xiang.html</id><summary type="html">&lt;h2&gt;帮助的使用&lt;/h2&gt;
+&lt;p&gt;在mysql中，有非常多的命令和变量，往往我们只能记住很小一部分，当不知道改命令的用法，可以使用如下&lt;code&gt;? + command&lt;/code&gt;：    &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="n"&gt;SHOW&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;会列出所有含有的SHOW的命令，然后，进一步使用?+command来获取具体命令的用法。  &lt;/p&gt;
+&lt;h2&gt;存储引擎概述&lt;/h2&gt;
+&lt;p&gt;mysql存储引擎包括：MyISAM,InnoDB,BDB,MEMORY,MERGE,EXAMPLE,NDB Cluster等等，在工作中常用的引擎是MyISAM,InnoDB,MEMORY和MERGE。如下表格各个存储引擎的特性：&lt;br /&gt;
+&lt;table border="1"&gt;
+&lt;th&gt;特性&lt;/th&gt;&lt;th&gt;MyIsam&lt;/th&gt;&lt;th&gt;InnoDB&lt;/th&gt;&lt;th&gt;Memory&lt;/th&gt;&lt;th&gt;BDB&lt;/th&gt;
+&lt;tr&gt;
+&lt;td&gt;存储限制&lt;/td&gt;&lt;td&gt;没有 &lt;/td&gt;&lt;td&gt;64TB &lt;/td&gt;&lt;td&gt;有&lt;/td&gt;&lt;td&gt;没有 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;事物安全&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;支持 &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;支持 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;锁机制&lt;/td&gt;&lt;td&gt;表锁  &lt;/td&gt;&lt;td&gt;行锁&lt;/td&gt;&lt;td&gt;表锁 &lt;/td&gt;&lt;td&gt;页锁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;空间使用&lt;/td&gt;&lt;td&gt;低 &lt;/td&gt;&lt;td&gt;高&lt;/td&gt;&lt;td&gt;没有&lt;/td&gt;&lt;td&gt;底 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;内存使用&lt;/td&gt;&lt;td&gt;低 &lt;/td&gt;&lt;td&gt;高  &lt;/td&gt;&lt;td&gt;中&lt;/td&gt;&lt;td&gt;底&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;批量插入速度&lt;/td&gt;&lt;td&gt;高 &lt;/td&gt;&lt;td&gt;低&lt;/td&gt;&lt;td&gt;高 &lt;/td&gt;&lt;td&gt;高 &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;支持外键&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td&gt;支持 &lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;/p&gt;
+&lt;p&gt;MYIsam:是mysql默认的存储引擎，在web是使用非常广泛，对于CRUD执行效率非常高，但是不支持事务处理。&lt;br /&gt;
+InnoDB：对事务处理比较擅长。&lt;br /&gt;
+Memory：将所有数据保存在RAM中，需要快速检索的时候，可以提供非常高的访问速度。&lt;br /&gt;
+Merge：可以将表字段相同的表联合成一张表，在分表的情况下会用到。  &lt;/p&gt;
+&lt;h2&gt;选择合适的数据类型&lt;/h2&gt;
+&lt;p&gt;1 MyIsam表尽量使用固定长度的数据类型代替可变长度的数据类型&lt;br /&gt;
+2 Memory表目前都是使用固定长度的数据类型&lt;br /&gt;
+3 InnoDB表使用varchar代替char&lt;br /&gt;
+text和blob注意事项：&lt;br /&gt;
+1. blob和text是进行大量的更新或者删除操作后，会再数据表中留下大量的“空洞”，建议定期使用optimize table进行碎片整理，以提高性能。&lt;br /&gt;
+2. 尽量避免检索大型的text和Blob&lt;br /&gt;
+3. 把text和blob分离到单独的表中。使主表保持固定长度的类型。  &lt;/p&gt;
+&lt;h2&gt;索引的使用和设计&lt;/h2&gt;
+&lt;h3&gt;索引设计原则&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;使用唯一索引。考虑到列中值的分布，对于只唯一的，索引效果更好。  &lt;/li&gt;
+&lt;li&gt;使用短索引。对于一个varchar(300)的这种列，如果前20个字符就基本可以确定唯一性，则只需要对前20个值建立索引。较短的索引可以减少磁盘IO，可以提高性能。  &lt;/li&gt;
+&lt;li&gt;最经典的最左原则。  &lt;/li&gt;
+&lt;li&gt;索引可以用于“&amp;lt;”,“&amp;gt;”,“=”，“&amp;gt;=”，“&amp;lt;=”，“BETWEEN”。在模式具有一个直接前缀的时候，也可用于like运算。  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;hash索引和btree索引&lt;/h3&gt;
+&lt;p&gt;hash用于=，&amp;lt;=&amp;gt;会比较快&lt;br /&gt;
+btree，任何关键字的左前缀都可以用于查找数据  &lt;/p&gt;
+&lt;h2&gt;mysql锁机制和事务管理&lt;/h2&gt;
+&lt;p&gt;mysql四个事务隔离级别：&lt;br /&gt;
+read uncommited ， read commited ， repeatable read ， serializable&lt;br /&gt;
+read uncommited 即脏读，一个事务修改了一行，另一个事务也可以读到该行。
+如果第一个事务执行了回滚，那么第二个事务读取的就是从来没有正式出现过的值。 
+read commited 即一致读，试图通过只读取提交的值的方式来解决脏读的问题，
+但是这又引起了不可重复读取的问题。
+一个事务执行一个查询，读取了大量的数据行。在它结束读取之前，另一个事务可能完成了对数据行的更改。当第一个事务试图再次执行同一个查询，服务器就会返回不同的结果。
+repeatable read 即可重复读，在一个事务对数据行执行读取或写入操作时锁定了这些数据行。
+但是这种方式又引发了幻想读的问题。
+因为只能锁定读取或写入的行，不能阻止另一个事务插入数据，后期执行同样的查询会产生更多的结果。
+serializable 模式中，事务被强制为依次执行。这是 SQL 标准建议的默认行为。&lt;br /&gt;
+MySQL 允许利用 set transaction 来设置隔离级别。&lt;br /&gt;
+所有存储引擎到支持表锁，但是MyIsam支持表锁&lt;br /&gt;
+mysql有两种锁的类型，读锁和写锁&lt;br /&gt;
+读锁表示可以并发读&lt;br /&gt;
+而写锁是独占的 &lt;br /&gt;
+而且需要大并发的读，可以考虑采用InnoDB，因为InnoDB是行级锁（InnoDB很多线程的时候会出现死锁，貌似是bug）。  &lt;/p&gt;
+&lt;p&gt;行级锁的优点及选择 ：
+1 ）在很多线程请求不同记录时减少冲突锁。&lt;br /&gt;
+2 ）事务回滚时减少改变数据。&lt;br /&gt;
+3 ）使长时间对单独的一行记录加锁成为可能。  &lt;/p&gt;
+&lt;p&gt;行级锁的缺点 ：
+1 ）比页级锁和表级锁消耗更多的内存。
+2 ）当在大量表中使用时，比页级锁和表级锁更慢，因为他需要请求更多的所资源。
+3 ）当需要频繁对大部分数据做 GROUP BY 操作或者需要频繁扫描整个表时，就明显的比其它锁更糟糕。
+4 ）使用更高层的锁的话，就能更方便的支持各种不同的类型应用程序，因为这种锁的开销比行级锁小多了。
+5 ）可以用应用程序级锁来代替行级锁，例如 MySQL 中的 GET_LOCK() 和 RELEASE_LOCK() 。但它们是劝告锁（原文： These are advisory locks ），因此只能用于安全可信的应用程序中。
+6 ）对于 InnoDB 和 BDB 表， MySQL 只有在指定用 LOCK TABLES 锁表时才使用表级锁。在这两种表中，建议最好不要使用 LOCK TABLES ，因为 InnoDB 自动采用行级锁， BDB 用页级锁来保证事务的隔离。&lt;/p&gt;
+&lt;p&gt;表锁的优点及选择：
+1 ）很多操作都是读表。
+2 ）在严格条件的索引上读取和更新，当更新或者删除可以用单独的索引来读取得到时： UPDATE tbl_name SET column=value WHERE unique_key_col=key_value;DELETE FROM tbl_name WHERE unique_key_col=key_value;
+3 ） SELECT 和 INSERT 语句并发的执行（表锁可以允许insert和select并发执行），但是只有很少的 UPDATE 和 DELETE 语句。
+4 ）很多的扫描表和对全表的 GROUP BY 操作，但是没有任何写表。&lt;/p&gt;
+&lt;p&gt;表锁的缺点：
+1 ）一个客户端提交了一个需要长时间运行的 SELECT 操作。
+2 ）其他客户端对同一个表提交了 UPDATE 操作，这个客户端就要等到 SELECT 完成了才能开始执行。
+3 ）其他客户端也对同一个表提交了 SELECT 请求。由于 UPDATE 的优先级高于 SELECT ，所以 SELECT 就会先等到 UPDATE 完成了之后才开始执行，它也在等待第一个 SELECT 操作。  &lt;/p&gt;</summary></entry><entry><title>ubuntu安装mysql</title><link href="http://dnfhujun.github.io/ubuntuan-zhuang-mysql.html" rel="alternate"></link><updated>2014-10-21T00:00:00+08:00</updated><author><name>hjboy</name></author><id>tag:dnfhujun.github.io,2014-10-21:ubuntuan-zhuang-mysql.html</id><summary type="html">&lt;p&gt;其实在unbuntu下安装mysql非常简单，只需要执行（需要超级用户的权限）：  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 

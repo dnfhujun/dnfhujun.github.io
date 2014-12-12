@@ -2,7 +2,7 @@
 <html lang="zh"
 >
 <head>
-    <title>MySQL - hujunblog</title>
+    <title>mysql - hujunblog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
 
     <meta name="author" content="hujun" />
-    <meta name="keywords" content="MySQL" />
+    <meta name="keywords" content="mysql" />
 
     <!-- Enable latex plugin -->
 
@@ -36,8 +36,8 @@
               title="hujunblog ATOM Feed"/>
 
 
-        <link href="http://dnfhujun.github.io/feeds/MySQL.atom.xml" type="application/atom+xml" rel="alternate"
-              title="hujunblog MySQL ATOM Feed"/>
+        <link href="http://dnfhujun.github.io/feeds/mysql.atom.xml" type="application/atom+xml" rel="alternate"
+              title="hujunblog mysql ATOM Feed"/>
 
 </head>
 <body>
@@ -85,6 +85,37 @@ hujunblog            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://dnfhujun.github.io/mysqlshi-yong-shi-xiang.html">mysql实用事项</a></h2>
+                <div class="summary"><h2>帮助的使用</h2>
+<p>在mysql中，有非常多的命令和变量，往往我们只能记住很小一部分，当不知道改命令的用法，可以使用如下<code>? + command</code>：    </p>
+<div class="highlight"><pre><span class="o">?</span> <span class="n">SHOW</span>
+</pre></div>
+
+
+<p>会列出所有含有的SHOW的命令，然后，进一步使用?+command来获取具体命令的用法。  </p>
+<h2>存储引擎概述</h2>
+<p>mysql存储引擎包括：MyISAM,InnoDB,BDB,MEMORY,MERGE,EXAMPLE,NDB Cluster等等，在工作中常用的引擎是MyISAM,InnoDB,MEMORY和MERGE。如下表格各个存储引擎的特性：<br />
+<table border="1">
+<th>特性</th><th>MyIsam</th><th>InnoDB</th><th>Memory</th><th>BDB</th>
+<tr>
+<td>存储限制</td><td>没有 </td><td>64TB </td><td>有</td><td>没有 </td>
+</tr>
+<tr>
+<td>事物安全</td><td> </td><td>支持 </td><td></td><td>支持 </td>
+</tr>
+<tr>
+<td>锁机制</td><td>表锁  </td><td>行锁</td><td>表锁 </td><td>页锁</td>
+</tr>
+<tr>
+<td>空间使用</td><td>低 </td><td>高</td><td>没有</td><td>底 </td>
+</tr>
+<tr>
+<td>内存使用 ...</td></tr></table></p>
+                    <a class="btn btn-default btn-xs" href="http://dnfhujun.github.io/mysqlshi-yong-shi-xiang.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://dnfhujun.github.io/ubuntuan-zhuang-mysql.html">ubuntu安装mysql</a></h2>
                 <div class="summary"><p>其实在unbuntu下安装mysql非常简单，只需要执行（需要超级用户的权限）：  </p>
 <div class="highlight"><pre><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">mysql</span><span class="o">-</span><span class="n">server</span> <span class="n">mysql</span><span class="o">-</span><span class="n">client</span>
@@ -118,8 +149,8 @@ hujunblog            </a>
                 <li class="list-group-item"><a href="http://dnfhujun.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group " id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="http://dnfhujun.github.io/tag/python.html">
-                                Python
+                            <a href="http://dnfhujun.github.io/tag/pelican.html">
+                                pelican
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -133,8 +164,8 @@ hujunblog            </a>
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="http://dnfhujun.github.io/tag/pelican.html">
-                                pelican
+                            <a href="http://dnfhujun.github.io/tag/python.html">
+                                Python
                             </a>
                         </li>
                     </ul>
